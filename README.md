@@ -1,6 +1,17 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fcommerce&project-name=commerce&repo-name=commerce&demo-title=Next.js%20Commerce&demo-url=https%3A%2F%2Fdemo.vercel.store&demo-image=https%3A%2F%2Fbigcommerce-demo-asset-ksvtgfvnd.vercel.app%2Fbigcommerce.png&env=COMPANY_NAME,SHOPIFY_REVALIDATION_SECRET,SHOPIFY_STORE_DOMAIN,SHOPIFY_STOREFRONT_ACCESS_TOKEN,SITE_NAME)
 
-# Next.js Commerce
+# Prototype Shopify Auth
+
+This is a prototype for my research regarding Shopify's authentication flow. In this app I have created a flow which allows for the creation of a new Shopify account, as well as the login into an existing one. There is also an implementation of NextAuth present, as that will be responsible for handling the session, after a user has logged in.
+
+## Code
+Listed below are the most relevant files and a description of their contents:
+
+- `/auth.ts`: This file contains the NextAuth implementation. A `NextAuth` instance is created and a login flow is registered within the `authorize` function. This function used to create an access token from Shopify which essentially logs the user in.
+- `/lib/shopify/mutations/auth.ts`: The mutations used to create a customer within Shopify and to create an access token for an existing customer.
+- `/lib/shopify/index.ts` (lines 124 - 164): The functions that make the actual API calls by making use of the previously mentioned mutations.
+
+## Next.js Commerce
 
 A high-performance, server-rendered Next.js App Router ecommerce application.
 
